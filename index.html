@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 		
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Windows Azure</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Hacking out webapps">
+		<meta name="author" content="Laurence Putra Franslay">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -40,25 +40,97 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>Windows Azure</h1>
+					<h3>Hacking out webapps</h3>
+					<h4>How to get started, and what you need to get going</h4>
 				</section>
 				
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with 
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-					<p>
-						<i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you run the speaker notes server.
-					</aside>
+					<section>
+						<h2>What this talk is not</h2>
+						<p>
+							A step by step guide to click buttons on the Azure portal. We at Microsoft think you are smarter than that ;)
+						</p>
+					</section>
+					<section>
+						<h2>But rather a bunch of stuff</h2>
+						<p>you would need to do on <strong>linux</strong> servers to host your own webapp</p>
+					</section>
+					<section>
+						<h2>LINUX?!?!?!</h2>
+						<p class="fragment">Yep, you read it right.</p>
+						<p class="fragment">A couple of <strong>MICROSOFT</strong> student partners are going to talk about Linux.</p>
+						<p class="fragment">And we are going to use CentOS for this demo.</p>
+					</section>
 				</section>
-				
+				<section>
+					<section>
+						<h2>Quick poll</h2>
+						<ol>
+							<li class="fragment">How many of you here have laptops?</li>
+							<li class="fragment">Who here knows how to use linux?</li>
+							<li class="fragment">Who here have their own website?</li>
+							<li class="fragment">Who maintains their own server and hosts sites for themselves and/or other people?</li>
+						</ol>
+					</section>
+					<section>
+						<h2>For those who have laptops</h2>
+						<p>Go to <a href="http://bit.ly/azureSG">bit.ly/azureSG</a></p>
+						<p>Free 3 month trial on a small instance</p>
+						<ol>
+							<li class="fragment">1 dedicated core</li>
+							<li class="fragment">1.75 GB RAM</li>
+							<li class="fragment">Free phone support</li>
+							<li class="fragment">In Singapore: 1800 622 1283</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Why Azure</h2>
+						<p class="fragment">Cos they have a bunch of awesome features</p>
+						<p class="fragment">Bunch of stuff like</p>
+						<ul>
+							<li class="fragment">georeplication</li>
+							<li class="fragment">high availability</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<section>
+							<h2>Introducing LAMP</h2>
+							<ol>
+								<li class="fragment"><strong>L</strong>inux</li>
+								<li class="fragment"><strong>A</strong>pache</li>
+								<li class="fragment"><strong>M</strong>ySQL</li>
+								<li class="fragment"><strong>P</strong>hp</li>
+							</ol>
+							<p class="fragment">A moderately easy to set up stack for you to start working on something right away</p>
+						</section>
+					</section>
+					<section>
+						<h1>Linux</h1>
+						<h2 class="fragment">Initial Setup</h2>
+						<p class="fragment">After you ssh into your server</p>
+						<p class="fragment">Copy your public key into the <code>authorized_keys</code> file</p>
+						<pre class="fragment"><code contenteditable>mkdir ~/.ssh
+vim ~/.ssh/authorized_keys
+chmod -R 700 ~/.ssh</code></pre>
+						<p class="fragment">Allows you to login to your server without typing in your passwords</p>
+					</section>
+					<section>
+						<h2>Commands you'll use very often</h2>
+						<pre class="fragment"><code contenteditable>ls ./</code></pre>
+						<pre class="fragment"><code contenteditable>cd ../</code></pre>
+						<pre class="fragment"><code contenteditable>rm -rf /</code></pre>
+						<pre class="fragment"><code contenteditable>mkdir</code></pre>
+						<pre class="fragment"><code contenteditable>touch</code></pre>
+						<pre class="fragment"><code contenteditable>vim</code></pre>
+					</section>
+					<section>
+						<h2>Installing software</h2>
+						<pre><code contenteditable>sudo yum install apache php mysql mysql-server</code></pre>
+					</section>
+				</section>
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
@@ -296,7 +368,7 @@ function linkify( selector ) {
 				progress: true,
 				history: true,
 				
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+				transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/linear(2d)
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
