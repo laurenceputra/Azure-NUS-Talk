@@ -153,16 +153,43 @@ chmod -R 700 ~/.ssh</code></pre>
 					</section>
 					<section>
 						<h2>Apps required to run your website</h2>
-						<pre><code>sudo yum install apache php mysql mysql-server</code></pre>
+						<pre><code>sudo yum install httpd php mysql mysql-server php-mysql</code></pre>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Apache</h2>
+						<h2>Apache (httpd)</h2>
 						<p class="fragment">Server software</p>
 						<p class="fragment">In charge of responding to the browsers</p>
 						<p class="fragment">Default root: <q>/var/www/html</q></p>
 						<p class="fragment">Manage multiple sites on a single machine using virtualhosts</p>
+						<pre class="fragment"><code>chkconfig httpd on</code></pre>
+						<pre class="fragment"><code>service httpd start</code></pre>
+					</section>
+					<section>
+						<h2>Virtualhosts</h2>
+						<p>your-domain.conf</p>
+						<pre><code>&ltVirtualHost *:80&gt
+	ServerAdmin you@your-domain.com
+	DocumentRoot /users/you/your-domain.com
+	ServerName your-domain.com
+	ServerAlias www.your-domain.com
+&lt/VirtualHost&gt</code></pre>
+						<p>Put in in a directory and include that directory in</p>
+						<q>/etc/httpd/conf/httpd.conf</q>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>MySQL</h2>
+						<h3>What is it?</h3>
+						<p class="fragment">A database</p>
+						<p class="fragment">Used to store data</p>
+						<p class="fragment">Other databases out there include PostgreSQL, mongoDB</p>
+					</section>
+					<section>
+						<h3>Why use a database?</h3>
+						<h4>Why not just store in a file?</h4>
 					</section>
 				</section>
 			</div>
