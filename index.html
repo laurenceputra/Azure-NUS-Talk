@@ -43,6 +43,8 @@
 					<h1>Windows Azure</h1>
 					<h3>Hacking out webapps</h3>
 					<h4>How to get started, and what you need to get going</h4>
+					<p>by <a href="http://geeksphere.net">Laurence Putra</a></p>
+					<p>&amp <a href="">Divyanshu Arora</a></p>
 				</section>
 				
 				<section>
@@ -50,6 +52,9 @@
 						<h2>What this talk is not</h2>
 						<p>
 							A step by step guide to click buttons on the Azure portal. We at Microsoft think you are smarter than that ;)
+						</p>
+						<p class="fragment">
+							Unlike some other cloud company
 						</p>
 					</section>
 					<section>
@@ -61,6 +66,7 @@
 						<p class="fragment">Yep, you read it right.</p>
 						<p class="fragment">A couple of <strong>MICROSOFT</strong> student partners are going to talk about Linux.</p>
 						<p class="fragment">And we are going to use CentOS for this demo.</p>
+						<img class="fragment" style="width:500px" src="./img/azure-logo.png">
 					</section>
 				</section>
 				<section>
@@ -83,6 +89,7 @@
 							<li class="fragment">Free phone support</li>
 							<li class="fragment">In Singapore: 1800 622 1283</li>
 						</ol>
+						<p class="fragment">Go on, sign up, and spin up a server</p>
 					</section>
 					<section>
 						<h2>Why Azure</h2>
@@ -96,250 +103,67 @@
 				</section>
 				<section>
 					<section>
-						<section>
-							<h2>Introducing LAMP</h2>
-							<ol>
-								<li class="fragment"><strong>L</strong>inux</li>
-								<li class="fragment"><strong>A</strong>pache</li>
-								<li class="fragment"><strong>M</strong>ySQL</li>
-								<li class="fragment"><strong>P</strong>hp</li>
-							</ol>
-							<p class="fragment">A moderately easy to set up stack for you to start working on something right away</p>
-						</section>
+						<h2>Introducing LAMP</h2>
+						<ol>
+							<li class="fragment"><strong>L</strong>inux</li>
+							<li class="fragment"><strong>A</strong>pache</li>
+							<li class="fragment"><strong>M</strong>ySQL</li>
+							<li class="fragment"><strong>P</strong>hp</li>
+						</ol>
+						<p class="fragment">A moderately easy to set up stack for you to start working on something right away</p>
 					</section>
 					<section>
 						<h1>Linux</h1>
 						<h2 class="fragment">Initial Setup</h2>
 						<p class="fragment">After you ssh into your server</p>
 						<p class="fragment">Copy your public key into the <code>authorized_keys</code> file</p>
-						<pre class="fragment"><code contenteditable>mkdir ~/.ssh
+						<pre class="fragment"><code>mkdir ~/.ssh
 vim ~/.ssh/authorized_keys
 chmod -R 700 ~/.ssh</code></pre>
 						<p class="fragment">Allows you to login to your server without typing in your passwords</p>
 					</section>
 					<section>
 						<h2>Commands you'll use very often</h2>
-						<pre class="fragment"><code contenteditable>ls ./</code></pre>
-						<pre class="fragment"><code contenteditable>cd ../</code></pre>
-						<pre class="fragment"><code contenteditable>rm -rf /</code></pre>
-						<pre class="fragment"><code contenteditable>mkdir</code></pre>
-						<pre class="fragment"><code contenteditable>touch</code></pre>
-						<pre class="fragment"><code contenteditable>vim</code></pre>
+						<pre class="fragment"><code>ls ./</code></pre>
+						<pre class="fragment"><code>cd ../</code></pre>
+						<pre class="fragment"><code>rm -rf /</code></pre>
+						<pre class="fragment"><code>mkdir</code></pre>
+						<pre class="fragment"><code>touch</code></pre>
+						<pre class="fragment"><code>vim</code></pre>
+						<pre class="fragment"><code>grep blah</code></pre>
+						<pre class="fragment"><code>man</code></pre>
+					</section>
+					<section>
+						<h2>Other unix-y stuff you should know</h2>
+						<pre class="fragment"><code>|</code></pre>
+						<pre class="fragment"><code>ls | grep NUS</code></pre>
+						<pre class="fragment"><code>></code></pre>
+						<pre class="fragment"><code>ls > filelist</code></pre>
+						<pre class="fragment"><code>>></code></pre>
+						<pre class="fragment"><code>ls >> filelist</code></pre>
 					</section>
 					<section>
 						<h2>Installing software</h2>
-						<pre><code contenteditable>sudo yum install apache php mysql mysql-server</code></pre>
-					</section>
-				</section>
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#/2/1">down</a>.
-						</p>
-						<a href="#/2/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<p>CentOS/Fedora uses the yum package manager</p>
+						<p>Debian/Ubuntu uses apt-get package manager</p>
+						<p class="fragment">Same purpose, just different tools on different systems</p>
+						<pre class="fragment"><code>yum install app-name</code></pre>
+						<pre class="fragment"><code>yum remove app-name</code></pre>
+						<pre class="fragment"><code>yum update</code></pre>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
+						<h2>Apps required to run your website</h2>
+						<pre><code>sudo yum install apache php mysql mysql-server</code></pre>
 					</section>
+				</section>
+				<section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
+						<h2>Apache</h2>
+						<p class="fragment">Server software</p>
+						<p class="fragment">In charge of responding to the browsers</p>
+						<p class="fragment">Default root: <q>/var/www/html</q></p>
+						<p class="fragment">Manage multiple sites on a single machine using virtualhosts</p>
 					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Holistic Overview</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview!
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-				
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					## Markdown support
-					
-					For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-					<pre><code contenteditable style="margin-top: 20px;">&lt;section data-markdown&gt;
-  ## Markdown support
-
-  For those of you who like that sort of thing. 
-  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-&lt;/section&gt;
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like:
-					</p>
-					<ul>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=cube">Cube</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=page">Page</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=linear">Linear</a></li>
-					</ul>
-				</section>
-
-				<section>
-					<section data-state="alert">
-						<h2>Global State</h2>
-						<p>
-							Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-							will be added as a class to the document element when the slide is open. This lets you
-							apply broader style changes, like switching the background.
-						</p>
-						<a href="#/7/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-state="blackout">
-						<h2>"blackout"</h2>
-						<a href="#/7/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-state="soothe">
-						<h2>"soothe"</h2>
-						<a href="#/7/0" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would 
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-				
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-    
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) ) {
-        node.className += ' roll';
-      }
-    };
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-				
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Fragmented Views</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<ol>
-						<li class="fragment"><code>any type</code></li>
-						<li class="fragment"><em>of view</em></li>
-						<li class="fragment"><strong>fragments</strong></li>
-					</ol>
-				</section>
-				
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank">
-						<img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png" alt="BreakDOM game screenshot">
-					</a>
-				</section>
-				
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
-				
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on github</a></li>
-						<li><a href="http://hakim.se/projects/reveal-js">Read more on my site</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
-				
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
 				</section>
 			</div>
 
@@ -368,7 +192,7 @@ function linkify( selector ) {
 				progress: true,
 				history: true,
 				
-				transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/linear(2d)
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
