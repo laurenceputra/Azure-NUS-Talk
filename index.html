@@ -50,17 +50,17 @@
 				<section>
 					<section>
 						<h2>What this talk is not</h2>
-						<p>A step by step guide to click buttons on the Azure portal. We at Microsoft think you are smarter than that ;)</p>
+						<p class="fragment">A step by step guide to click buttons on the Azure portal.</p>
+                                                <p class="fragment">A guide to using x, y, or z web development framework.</p>
 					</section>
 					<section>
 						<h2>But rather a bunch of stuff</h2>
-						<p>you would need to do on <strong>linux</strong> servers to host your own webapp</p>
+						<p>you would need to do to get started with your own <strong>linux</strong> servers to host your webapp</p>
 					</section>
 					<section>
 						<h2>LINUX?!?!?!</h2>
 						<p class="fragment">Yep, you read it right.</p>
-						<p class="fragment">A couple of <strong>MICROSOFT</strong> student partners are going to talk about Linux.</p>
-						<p class="fragment">And we are going to use CentOS for this demo.</p>
+						<p class="fragment">We'll be using CentOS for this demo.</p>
 						<img class="fragment" style="width:500px" src="./img/azure-logo.png">
 					</section>
 				</section>
@@ -70,7 +70,7 @@
 						<ol>
 							<li class="fragment">How many of you here have laptops?</li>
 							<li class="fragment">Who here knows how to use linux?</li>
-							<li class="fragment">Who here have their own website?</li>
+							<li class="fragment">Who here has their own website?</li>
 							<li class="fragment">Who maintains their own server and hosts sites for themselves and/or other people?</li>
 						</ol>
 					</section>
@@ -86,10 +86,23 @@
 						</ol>
 						<p class="fragment">Go on, sign up, and spin up a server</p>
 					</section>
+                                        <section>
+                                          <h2 class="fragment">Why a VM on a cloud service?</h2>
+                                          <h4 class="fragment">Why not a dedicated server? Or a PaaS service like Heroku?</h4>
+                                          <p class="fragment">tl;dr-it's a balancing act between advantages of abstraction layers</p>
+                                          <ul>
+                                            <li class="fragment">Extremely easy setup, trivial scaling, etc.</li>
+                                            <li class="fragment">Configurability, determinism in performance, etc.</li>
+                                          </ul>
+                                          <br/>
+                                          <p class="fragment">
+                                            Services like Azure, EC2, etc., imo, a sweet spot
+                                          </p>
+                                        </section>
 					<section>
 						<h2>Why Azure</h2>
-						<p class="fragment">Cos they have a bunch of awesome features</p>
-						<p class="fragment">Bunch of stuff like</p>
+						<p class="fragment">Because they have some really good features</p>
+						<p class="fragment">Bunch of *easily usable* stuff like</p>
 						<ul>
 							<li class="fragment">georeplication</li>
 							<li class="fragment">high availability</li>
@@ -106,7 +119,7 @@
 							<li class="fragment"><strong>M</strong>ySQL</li>
 							<li class="fragment"><strong>P</strong>hp</li>
 						</ol>
-						<p class="fragment">A moderately easy to set up stack for you to start working on something right away</p>
+						<p class="fragment">A stack, that's moderately easy to set up, for you to start working on something right away</p>
 					</section>
 					<section>
 						<h1>Linux</h1>
@@ -115,13 +128,16 @@
 						<p class="fragment">Copy your public key into the <code>authorized_keys</code> file</p>
 						<pre class="fragment"><code>mkdir ~/.ssh
 vim ~/.ssh/authorized_keys
-chmod -R 700 ~/.ssh</code></pre>
-						<p class="fragment">Allows you to login to your server without typing in your passwords</p>
+chmod go-w ~/.ssh
+chmod 600 ~/.ssh/authorized_keys</code></pre>
+						<p class="fragment">Allows you to login to your server with better security than a simple password</p>
+                                                <p class="fragment">But recommended that you password protect your private key</p>
 					</section>
 					<section>
 						<h2>Commands you'll use very often</h2>
 						<pre class="fragment"><code>ls ./</code></pre>
 						<pre class="fragment"><code>cd ../</code></pre>
+                                                <pre class="fragment"><code>pushd, popd</code></pre>
 						<pre class="fragment"><code>rm -rf /</code></pre>
 						<pre class="fragment"><code>mkdir</code></pre>
 						<pre class="fragment"><code>touch</code></pre>
@@ -145,6 +161,7 @@ chmod -R 700 ~/.ssh</code></pre>
 						<p class="fragment">Same purpose, just different tools on different systems</p>
 						<pre class="fragment"><code>yum install app-name</code></pre>
 						<pre class="fragment"><code>yum remove app-name</code></pre>
+                                                <pre class="fragment"><code>yum -C search app-name</code></pre>
 						<pre class="fragment"><code>yum update</code></pre>
 					</section>
 					<section>
